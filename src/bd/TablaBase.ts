@@ -1,8 +1,7 @@
-import type { ColumnType, Generated } from "kysely";
+import type { ColumnType } from "kysely";
 
 export interface TablaBase {
-  id: Generated<number>;
+  id: ColumnType<number, never, never>;
   creado_en: ColumnType<Date, never, never>;
   actualizado_en: ColumnType<Date, never, never>;
 }
-

@@ -4,8 +4,7 @@
   "description": "Tipos para el backend Lucido",
   "module": "src/index.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./usuario": "./src/Usuario.ts"
+    "./bd/*": "./src/bd/*.ts"
   },
   "type": "module",
   "devDependencies": {
