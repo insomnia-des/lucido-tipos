@@ -12,18 +12,18 @@ export interface TablaGremioDeDiscord extends TablaBase {
   url_del_cartel: string | null;
 }
 
-export type Gremio = Selectable<TablaGremioDeDiscord>;
-export type CrearGremio = Insertable<TablaGremioDeDiscord>;
-export type ActualizarGremio = Updateable<TablaGremioDeDiscord>;
+export type GremioDeDiscord = Selectable<TablaGremioDeDiscord>;
+export type CrearGremioDeDiscord = Insertable<TablaGremioDeDiscord>;
+export type ActualizarGremioDeDiscord = Updateable<TablaGremioDeDiscord>;
 
-export const EsquemaCrearGremio = v.object({
+export const EsquemaCrearGremioDeDiscord = v.object({
   id_de_discord: idDeDiscord,
   nombre: v.pipe(v.string(), v.minLength(2), v.maxLength(32)),
   descripcion: v.nullish(v.pipe(v.string(), v.minLength(1), v.maxLength(120))),
   url_del_icono: v.nullish(urlDeImagenDeDiscord),
   url_del_cartel: v.nullish(urlDeImagenDeDiscord),
-}) satisfies EsquemaPara<CrearGremio>;
+}) satisfies EsquemaPara<CrearGremioDeDiscord>;
 
-export const EsquemaActualizarGremio = v.partial(
-  EsquemaCrearGremio,
-) satisfies EsquemaPara<ActualizarGremio>;
+export const EsquemaActualizarGremioDeDiscord = v.partial(
+  EsquemaCrearGremioDeDiscord,
+) satisfies EsquemaPara<ActualizarGremioDeDiscord>;
