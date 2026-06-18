@@ -19,9 +19,9 @@ export type ActualizarGremio = Updateable<TablaGremioDeDiscord>;
 export const EsquemaCrearGremio = v.object({
   id_de_discord: idDeDiscord,
   nombre: v.pipe(v.string(), v.minLength(2), v.maxLength(32)),
-  descripcion: v.optional(v.pipe(v.string(), v.minLength(1), v.maxLength(120))),
-  url_del_icono: v.optional(urlDeImagenDeDiscord),
-  url_del_cartel: v.optional(urlDeImagenDeDiscord),
+  descripcion: v.nullish(v.pipe(v.string(), v.minLength(1), v.maxLength(120))),
+  url_del_icono: v.nullish(urlDeImagenDeDiscord),
+  url_del_cartel: v.nullish(urlDeImagenDeDiscord),
 }) satisfies EsquemaPara<CrearGremio>;
 
 export const EsquemaActualizarGremio = v.partial(
